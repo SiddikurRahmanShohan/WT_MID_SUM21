@@ -16,6 +16,8 @@
 	$err_fax="";
 	$licNo= "";
 	$err_licNo="";
+	$nId= "";
+	$err_nId="";
 	$addrs="";
 	$err_address="";
 	
@@ -117,29 +119,29 @@
 		}
 		
 		if(empty($_POST["phone"])){
-			$err_code="phone Required";
+			$err_phone="phone Required";
 			$hasError = true;
 		}
 		else if(!is_numeric($_POST["phone"])){
-			$err_code="phone Must be a number";
+			$err_phone="phone Must be a number";
 			$hasError = true;
 		}
 		
 		else{
-			$code=htmlspecialchars($_POST["phone"]);
+			$phone=htmlspecialchars($_POST["phone"]);
 		}
 		
 		if(empty($_POST["licNo"])){
-			$err_number="Licence Number Required";
+			$err_licNo="Licence Number Required";
 			$hasError = true;
 		}
 		else if(!is_numeric($_POST["licNo"])){
-			$err_number="must be a number";
+			$err_licNo="must be a number";
 			$hasError = true;
 		}
 		
 		else{
-			$number=htmlspecialchars($_POST["licNo"]);
+			$licNo=htmlspecialchars($_POST["licNo"]);
 		}
 		
 		if(empty($_POST["cPass"])){
@@ -147,7 +149,7 @@
 			$hasError = true;
 		}
 		else if($_POST["cPass"] != $_POST["password"]){
-			$err_pass="Password doesen't match!";
+			$err_cPass="Password doesen't match!";
 			$hasError = true;
 		}
 		
@@ -165,12 +167,20 @@
 		}
 		
 		if(empty($_POST["nid"])){
-			$err_zip="nid Required";
+			$err_nId="nid Required";
 			$hasError = true;
 		}
 		
 		else{
-			$zip=htmlspecialchars($_POST["nid"]);
+			$nId=htmlspecialchars($_POST["nid"]);
+		}
+		if(empty($_POST["fax"])){
+			$err_fax="fax Required";
+			$hasError = true;
+		}
+		
+		else{
+			$fax=htmlspecialchars($_POST["nid"]);
 		}
 	
 		
@@ -180,7 +190,8 @@
 			echo $_POST["email"]."<br/>";
 			echo $_POST["phone"]."<br/>";
 			echo $_POST["address"]."<br/>";
-			echo $_POST["Password"]."<br/>";
+			echo $_POST["nid"]."<br/>";
+			echo $_POST["password"]."<br/>";
 		}
 		
 		
@@ -189,6 +200,7 @@
 <html>
 	<head></head>
 	<body>
+	    <h3>Add Registrar</h3>
 		<fieldset>
 			<form action="" method="post">
 				<table >
@@ -206,8 +218,8 @@
 					
 			        <tr>
 						<td align="right">NID: </td>
-						<td><input type="text" name="nid" value="<?php echo $nid;?>"></td>
-						<td><span><?php echo $err_nid;?></span></td>
+						<td><input type="text" name="nid" value="<?php echo $nId;?>"></td>
+						<td><span><?php echo $err_nId;?></span></td>
 						
 					</tr>
 					
