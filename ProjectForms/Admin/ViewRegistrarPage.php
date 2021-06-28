@@ -116,7 +116,7 @@
 				</table>
 			</form>
 		</fieldset>
-		<table >
+		<table border="2">
 					<tr>
 					    <td align="center">Licence No</td>
 						<td align="center">Name</td>
@@ -140,7 +140,7 @@
 						<td align="center"><?php echo $fax;?></td>
 						<td align="center"><?php echo $email;?></td>
 						<td align="center"><?php echo $addrs;?></td>
-						<td align="center"><a href="EditRegistrar.php">Edit</a></td>
+						<td align="center"><a href="AddRegistrarPage.php">Edit</a></td>
                         <td align="center"><input type="submit" value="Delete"></td>						
 					</tr>
 					

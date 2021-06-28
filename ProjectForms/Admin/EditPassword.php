@@ -137,7 +137,7 @@
 				</table>
 			</form>
 		</fieldset>
-		<a href="AdminHomePage.php">Back</a>
+		<a href="AdminDashboard.php">Back</a>
 	</body>
 </html>
 

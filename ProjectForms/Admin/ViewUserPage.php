@@ -113,7 +113,7 @@
 				</table>
 			</form>
 		</fieldset>
-		<table >
+		<table border="2" >
 					<tr>
 					    <td align="center">NID</td>
 						<td align="center">Name</td>
